@@ -10,7 +10,7 @@ class StringTest extends TestCase
 {
     public function test_first_upper_1(): void
     {
-        $string = new String();
+        $string = new StrangeString();
         $input = 'Cat';
         $result = $string->strangeString($input);
         $this->assertSame($result, 'Tac');
@@ -18,7 +18,7 @@ class StringTest extends TestCase
 
     public function test_first_upper_2(): void
     {
-        $string = new String();
+        $string = new StrangeString();
         $input = 'Мышь';
         $result = $string->strangeString($input);
         $this->assertSame($result, 'Ьшым');
@@ -26,7 +26,7 @@ class StringTest extends TestCase
 
     public function test_upper_in_the_middle(): void
     {
-        $string = new String();
+        $string = new StrangeString();
         $input = 'houSe';
         $result = $string->strangeString($input);
         $this->assertSame($result, 'esuOh');
@@ -34,7 +34,7 @@ class StringTest extends TestCase
 
     public function test_two_uppers_in_a_row(): void
     {
-        $string = new String();
+        $string = new StrangeString();
         $input = 'домИК';
         $result = $string->strangeString($input);
         $this->assertSame($result, 'кимОД');
@@ -42,7 +42,7 @@ class StringTest extends TestCase
 
     public function test_two_uppers(): void
     {
-        $string = new String();
+        $string = new StrangeString();
         $input = 'elEpHant';
         $result = $string->strangeString($input);
         $this->assertSame($result, 'tnAhPele');
@@ -50,7 +50,7 @@ class StringTest extends TestCase
 
     public function test_punctuation(): void
     {
-        $string = new String();
+        $string = new StrangeString();
         $input = 'cat,';
         $result = $string->strangeString($input);
         $this->assertSame($result, 'tac,');
@@ -58,7 +58,7 @@ class StringTest extends TestCase
 
     public function test_punctuation_and_uppercase_letter(): void
     {
-        $string = new String();
+        $string = new StrangeString();
         $input = 'Зима:' ;
         $result = $string->strangeString($input);
         $this->assertSame($result, 'Амиз:');
@@ -66,7 +66,7 @@ class StringTest extends TestCase
 
     public function test_sentence_1(): void
     {
-        $string = new String();
+        $string = new StrangeString();
         $input = "is 'cold' now" ;
         $result = $string->strangeString($input);
         $this->assertSame($result, "si 'dloc' won");
@@ -74,7 +74,7 @@ class StringTest extends TestCase
 
     public function test_sentence_2(): void
     {
-        $string = new String();
+        $string = new StrangeString();
         $input = 'это «Так» "просто"';
         $result = $string->strangeString($input);
         $this->assertSame($result, 'отэ «Так» "отсорп"');
@@ -82,7 +82,7 @@ class StringTest extends TestCase
 
     public function test_separators_1(): void
     {
-        $string = new String();
+        $string = new StrangeString();
         $input = 'third-part';
         $result = $string->strangeString($input);
         $this->assertSame($result, 'driht-trap');
@@ -90,7 +90,7 @@ class StringTest extends TestCase
 
     public function test_separators_2(): void
     {
-        $string = new String();
+        $string = new StrangeString();
         $input = 'can`t';
         $result = $string->strangeString($input);
         $this->assertSame($result, 'nac`t');

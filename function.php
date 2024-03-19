@@ -1,6 +1,6 @@
 <?php
 
-class String
+class StrangeString
 {
     public function strangeString(string $text): string
     {
